@@ -15,6 +15,7 @@ function App() {
   const [turns, setTurns] = useState(0)
   const [choice1, setChoice1] = useState(null)
   const [choice2, setChoice2] = useState(null)
+  const [disabled, setDisabled] = useState(false)
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
