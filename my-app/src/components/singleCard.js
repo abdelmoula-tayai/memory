@@ -7,4 +7,4 @@ export default function SingleCard({card}) {
          </div>
     </div>
   );
-}
+} 
