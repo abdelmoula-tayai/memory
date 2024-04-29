@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import SingleCard from './components/singleCard';
 
@@ -25,7 +25,39 @@ function App() {
     setTurns(0)
   }
 
-  console.log(cards, turns)
+ const HandleChoice = (card) => {
+  choice1 ? setChoice2(card) : setChoice1(card)
+ }
+
+ useEffect(() => {
+    if(choice1 && choice2) {
+      if(choice1.src === choice2.src) {
+        setCards(prevCards => {
+          return prevCards.map(card => {
+            if(card.src === choice1.src) {
+              return {...card, matched: true}
+            } else {
+            return card
+          }
+        })
+      }) 
+        resetTurns()
+      } else {
+        setTimeout(() => {
+          resetTurns()
+        }, 1000)
+      }
+      
+    }
+ }, [choice1, choice2])
+
+ console.log(cards)
+
+ const resetTurns = () => {
+  setChoice1(null)
+  setChoice2(null)
+  setTurns(prevTurns => prevTurns + 1)
+ }
 
   return (
     <div className="app">
@@ -34,7 +66,10 @@ function App() {
 
       <div className="card-grid">
       {cards.map(card => (
-        <SingleCard key={card.id} card={card}/>
+        <SingleCard key={card.id}
+         card={card
+        } HandleChoice={HandleChoice}
+         flipped={card === choice1 || card === choice2 || card.matched}/>
       ))}
       </div>
     </div>

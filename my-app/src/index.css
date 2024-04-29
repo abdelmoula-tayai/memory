@@ -19,6 +19,10 @@ body {
 
 h1 {
   font-family: 'beaufortBold', sans-serif;
+  background: -webkit-linear-gradient(-90deg, #F0E6D2, #C8AA6E,#C8AA6E, #C89B3C, #785A28, #463714);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
