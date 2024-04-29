@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import SingleCard from './components/singleCard';
 
 const cardImages = [
   {src : "/img/cardback_viego.webp"},
@@ -31,12 +32,7 @@ function App() {
 
       <div className="card-grid">
       {cards.map(card => (
-        <div className='card' key={card.id}> 
-            <div>
-              <img className='front' src={card.src} alt="card front"/>
-              <img className='back' src="/img/card_cover.webp" alt="card back"/> 
-            </div>
-        </div>
+        <SingleCard key={card.id} card={card}/>
       ))}
       </div>
     </div>
