@@ -27,6 +27,8 @@ function App() {
   }
 
  const HandleChoice = (card) => {
+  if (card.id === choice1?.id)
+    return
   choice1 ? setChoice2(card) : setChoice1(card)
  }
 

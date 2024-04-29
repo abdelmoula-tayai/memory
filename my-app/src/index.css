@@ -13,16 +13,18 @@ body {
   margin: 0;
   font-size: 1.5em;
   text-align: center;
-  background: #1b1523;
+  background: #010A13;
   color: #fff;
 }
 
 h1 {
   font-family: 'beaufortBold', sans-serif;
-  background: -webkit-linear-gradient(-90deg, #F0E6D2, #C8AA6E,#C8AA6E, #C89B3C, #785A28, #463714);
+  background: -webkit-linear-gradient(-90deg, #F0E6D2, #C8AA6E,#C8AA6E, #C89B3C, #785A28);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 
