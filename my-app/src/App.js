@@ -65,7 +65,11 @@ function App() {
   setDisabled(false)
  }
 
-  
+useEffect(() => { 
+  if(cards.length > 0 && cards.every(card => card.matched)) {
+    alert(`Congratulations! You have completed the game in ${turns} turns!`)
+  }
+}, [cards, turns])
 
   return (
     <div className="app">
