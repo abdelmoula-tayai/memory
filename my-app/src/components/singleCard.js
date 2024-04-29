@@ -1,7 +1,9 @@
-export default function SingleCard({card, HandleChoice, flipped}) {
+export default function SingleCard({card, HandleChoice, flipped, disabled}) {
 
     const handleClick = () => {
-        HandleChoice(card)
+        if(!disabled) {
+            HandleChoice(card)
+        }
     }
 
   return (

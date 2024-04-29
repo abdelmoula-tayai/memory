@@ -31,8 +31,9 @@ function App() {
  }
 
  useEffect(() => {
-  setDisabled(true)
     if(choice1 && choice2) {
+      setDisabled(true)
+
       if(choice1.src === choice2.src) {
         setCards(prevCards => {
           return prevCards.map(card => {
@@ -53,7 +54,7 @@ function App() {
     }
  }, [choice1, choice2])
 
- console.log(cards)
+
 
  const resetTurns = () => {
   setChoice1(null)
@@ -61,6 +62,8 @@ function App() {
   setTurns(prevTurns => prevTurns + 1)
   setDisabled(false)
  }
+
+  
 
   return (
     <div className="app">
@@ -72,7 +75,9 @@ function App() {
         <SingleCard key={card.id}
          card={card
         } HandleChoice={HandleChoice}
-         flipped={card === choice1 || card === choice2 || card.matched}/>
+         flipped={card === choice1 || card === choice2 || card.matched}
+         disabled={disabled}/>
+        
       ))}
       </div>
     </div>
