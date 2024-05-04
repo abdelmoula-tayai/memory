@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import SingleCard from './components/singleCard';
+import Button from './components/button';
+import Victory from './components/victory';
 
 const cardImages = [
   {src : "/img/cardback_viego.webp"},
@@ -65,16 +67,15 @@ function App() {
   setDisabled(false)
  }
 
-useEffect(() => { 
-  if(cards.length > 0 && cards.every(card => card.matched)) {
-    alert(`Congratulations! You have completed the game in ${turns} turns!`)
-  }
-}, [cards, turns])
+  
 
   return (
     <div className="app">
       <h1>Memory Legends</h1>
-      <button onClick={shuffleCards}>New game</button>
+      <Button shuffleCards={shuffleCards}/>
+      {cards.length > 0 && cards.every(card => card.matched) && 
+      <Victory shuffleCards={shuffleCards}/>
+    }
 
       <div className="card-grid">
       {cards.map(card => (
