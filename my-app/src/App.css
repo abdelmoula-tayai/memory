@@ -96,7 +96,7 @@ button:active {
   100% {opacity: 1;}
 }
 
-.victory-img{
+.victory-img, .defeat-img{
   width: 50%;
   z-index: 5; 
   animation: fadeIn 2s ease-in-out;
@@ -107,14 +107,14 @@ button:active {
 
 
 
-.victory {
+.victory, .defeat {
   display: flex;
   justify-content: center;
   
   
 }
 
-.victory::before {
+.victory::before, .defeat::before {
   content: "";
   position: fixed;
   top: 0;
