@@ -3,8 +3,23 @@
   src: url(../public/font/BeaufortforLOL-Regular.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'beaufortBold';
+  src: url(../public/font/BeaufortforLOL-Bold.ttf) format('truetype');
+}
+
 .app{
   margin: 0 auto;
+}
+
+h1, h2 {
+  font-family: 'beaufortBold', sans-serif;
+  background: -webkit-linear-gradient(-90deg, #F0E6D2, #C8AA6E,#C8AA6E, #C89B3C, #785A28);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 button {
@@ -21,7 +36,7 @@ button {
   border-width: 2px;
   text-transform: uppercase;
   position: absolute;
-  top: 70%;
+  top: 67%;
   z-index: 5;
   animation: fadeIn 2s ease-in-out;
 }
@@ -86,6 +101,7 @@ button:active {
   z-index: 5; 
   animation: fadeIn 2s ease-in-out;
   position: absolute;
+  top: 5%;
 }
 
 
@@ -94,6 +110,7 @@ button:active {
 .victory {
   display: flex;
   justify-content: center;
+  
   
 }
 

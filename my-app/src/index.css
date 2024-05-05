@@ -3,10 +3,7 @@
   src: url(../public/font/BeaufortforLOL-Regular.ttf) format('truetype');
 }
 
-@font-face {
-  font-family: 'beaufortBold';
-  src: url(../public/font/BeaufortforLOL-Bold.ttf) format('truetype');
-}
+
 
 body {
   font-family: 'beaufort', sans-serif;
@@ -33,15 +30,7 @@ body::after {
   z-index: -1;
 }
 
-h1 {
-  font-family: 'beaufortBold', sans-serif;
-  background: -webkit-linear-gradient(-90deg, #F0E6D2, #C8AA6E,#C8AA6E, #C89B3C, #785A28);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
+
 
 
 

@@ -23,7 +23,8 @@ function App() {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({...card, id: Math.random() }))
-
+    setChoice1(null)
+    setChoice2(null)
     setCards(shuffledCards)
     setTurns(0)
   }
@@ -59,6 +60,12 @@ function App() {
  }, [choice1, choice2])
 
 
+ useEffect (() => {
+  shuffleCards()
+ 
+ } , [])
+
+
 
  const resetTurns = () => {
   setChoice1(null)
@@ -67,12 +74,10 @@ function App() {
   setDisabled(false)
  }
 
-  
-
   return (
     <div className="app">
       <h1>Memory Legends</h1>
-      <Button shuffleCards={shuffleCards}/>
+      <h2>Turns: {turns}</h2>
       {cards.length > 0 && cards.every(card => card.matched) && 
       <Victory shuffleCards={shuffleCards}/>
     }
