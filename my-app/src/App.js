@@ -3,6 +3,7 @@ import './App.css';
 import SingleCard from './components/singleCard';
 import Victory from './components/victory';
 import CountdownTimer from './components/countdownTimer';
+import Defeat from './components/defeat';
 
 const cardImages = [
   { src: '/img/cardback_viego.webp' },
@@ -93,6 +94,7 @@ function App() {
       {cards.length > 0 && cards.every((card) => card.matched) && (
         <Victory shuffleCards={shuffleCards} />
       )}
+      {isGameActive === false && <Defeat shuffleCards={shuffleCards} />}
 
       <div className="card-grid">
         {cards.map((card) => (
