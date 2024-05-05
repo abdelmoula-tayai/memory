@@ -88,7 +88,7 @@ function App() {
     <div className="app">
       <h1>Memory Legends</h1>
       <CountdownTimer
-        initialTime={60}
+        initialTime={30}
         gameStatus={gameStatus}
         onTimeEnd={handleTimeEnd}
       />
