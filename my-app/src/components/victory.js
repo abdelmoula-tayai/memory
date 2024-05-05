@@ -1,5 +1,7 @@
 import Button from "./button"
 
+
+// composant similaire au composant defeat mais avec une image différente
 export default function Victory({shuffleCards}) {
     return ( 
             <div className="victory">

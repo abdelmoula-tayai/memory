@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from 'react';
 
-const CountdownTimer = ({ time, onTimeEnd, onReset, isGameActive }) => {
-  const [currentTime, setCurrentTime] = useState(time);
 
+// composant du timer
+const CountdownTimer = ({ initialTime, gameStatus, onTimeEnd }) => {
+  const [timeLeft, setTimeLeft] = useState(initialTime); // Temps restant en secondes
+
+
+// useEffect pour mettre à jour le minuteur
   useEffect(() => {
     let timer;
-    if (isGameActive && currentTime > 0) {
-      timer = setTimeout(() => {
-        setCurrentTime(currentTime - 1);
-      }, 1000);
-    } else if (currentTime === 0) {
-      onTimeEnd(); // Appellez une fonction lorsque le temps est écoulé
+    if (gameStatus === 'playing' && timeLeft > 0) {
+      timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000); // Décrémenter le temps restant
+    } else if (gameStatus !== 'playing' || timeLeft === 0) {
+      if (timeLeft === 0) {
+        onTimeEnd(); // Appeler lorsque le timer atteint zéro
+      }
+      clearTimeout(timer); // Arrêter le minuteur
     }
-    return () => clearTimeout(timer);
-  }, [currentTime, isGameActive]);
+    return () => clearTimeout(timer); 
+  }, [gameStatus, timeLeft, onTimeEnd]); // Mettre à jour le timer lorsque le jeu est en cours et que le temps restant est supérieur à 0
 
   useEffect(() => {
-    if (onReset) {
-      setCurrentTime(time);
+    if (gameStatus === 'playing') {
+      setTimeLeft(initialTime); // Réinitialiser le timer lorsque le jeu commence
     }
-  }, [onReset, time]);
+  }, [gameStatus, initialTime]); 
 
-  return <h2>Time: {currentTime}</h2>;
+  return <h2>Time: {timeLeft}</h2>;
 };
 
 export default CountdownTimer;

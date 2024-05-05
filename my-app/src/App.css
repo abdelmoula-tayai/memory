@@ -14,7 +14,7 @@
 
 h1, h2 {
   font-family: 'beaufortBold', sans-serif;
-  background: -webkit-linear-gradient(-90deg, #F0E6D2, #C8AA6E,#C8AA6E, #C89B3C, #785A28);
+  background: -webkit-linear-gradient(top, #F0E6D2, #C8AA6E, #C89B3C, #785A28, #463714);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -104,7 +104,9 @@ button:active {
   top: 5%;
 }
 
-
+.defeat-img{
+  width: 30%;
+}
 
 
 .victory, .defeat {
