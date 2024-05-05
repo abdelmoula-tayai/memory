@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import SingleCard from './components/singleCard';
-import Button from './components/button';
 import Victory from './components/victory';
 
 const cardImages = [
