@@ -2,8 +2,8 @@ import Button from "./button"
 
 export default function Defeat({shuffleCards}) {
     return ( 
-            <div className="victory">
-                <img src="/img/victory.png" alt="victory" className="victory-img"/>
+            <div className="defeat">
+                <img src="/img/defeat.png" alt="defeat" className="defeat-img"/>
                 <Button shuffleCards={shuffleCards}/>
             </div>
     )
